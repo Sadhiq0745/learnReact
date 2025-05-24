@@ -6,13 +6,15 @@ function App() {
   
   const [color, setColor] = useState("black")
   const [text , setText] = useState("yellow")
+  const [textcolor, settextColor] = useState("")
   
 
   return (
-    
     <div className="w-full h-screen duration-200"
     style={{backgroundColor:color}}>
-      <div className="justify-center flex items-center w-screen h-screen font-semibold font-sans">{text}</div>
+      <div className="justify-center flex items-center w-screen h-screen font-semibold font-sans"
+      style={{color:textcolor}}>
+        {text}</div>
   
       <div className="fixed flex flex-wrap justify-center bottom-12 inset-x-0 px-2">
         <div className="flex flex-wrap justify-center gap-3 shadow-lg bg-white px-3 py-2  rounded-3xl"> 
@@ -20,6 +22,8 @@ function App() {
           onClick={()=> {
             setColor("red")
             setText("RED")
+            settextColor("white")
+           
           }}
           className="outline-none  px-4 py-1 rounded-lg" 
           style={{backgroundColor:"red"}}>Red
@@ -56,6 +60,7 @@ function App() {
            onClick={()=> {
             setColor("pink")
             setText("PINK")
+            settextColor("black")
           }}
           className="outline-none  px-4 py-1 rounded-lg" 
           style={{backgroundColor:"pink"}}>Pink
@@ -65,6 +70,7 @@ function App() {
            onClick={()=> {
             setColor("violet")
             setText("VIOLET")
+            settextColor("white")
           }}
           className="outline-none  px-4 py-1 rounded-lg" 
           style={{backgroundColor:"violet"}}>Violet
@@ -74,6 +80,7 @@ function App() {
            onClick={()=> {
             setColor("yellow")
             setText("YELLOW")
+            settextColor("black")
           }}
           className="outline-none  px-4 py-1 rounded-lg" 
           style={{backgroundColor:"yellow"}}>Yellow

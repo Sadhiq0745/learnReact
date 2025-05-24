@@ -5,11 +5,11 @@ import React from 'react'
 
 // In this we can create fcuntiin in the main.jsx and run here it self
 // we can use the global declared variable also in the any function ...
-const userVaiable ="Here we used the Varibale that has been created to use to show in the output "
+const userVaiable ="Here we used the Varibale that has been created to use ,to show in the output "
 
 function MyApp(){
   return(
-    <h3>Here im created the function in Same Main Jsx , where rendering is done ....!!
+    <h3>Here im created the function in Same Main Jsx , where rendering is done ....!! /n
       {userVaiable}
     </h3>
   )
@@ -33,7 +33,7 @@ const reactElement = React.createElement(
 createRoot(document.getElementById('root')).render(
 
   <StrictMode>
-    <MyApp/>
+    <App/>
   </StrictMode>
   
   //reactElement
