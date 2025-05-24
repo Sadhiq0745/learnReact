@@ -1,13 +1,40 @@
 import { useState } from 'react'
 import './App.css'
-
+import ThemeBtn from './components/ThemeBtn'
+import Card from './components/Card'
+import { useEffect } from 'react'
+import { ThemeProvider } from './contexts/theme'
 function App() {
-  const [count, setCount] = useState(0)
+  const [themeMode,setThememode] = useState("light")
 
+  const lightTheme =()=>{
+    setThememode("light")
+
+  }
+  const darkTheme = ()=>{
+    setThememode("dark")
+  }
+
+  //actual change in the theme....
+  useEffect(() => {
+    document.querySelector('html').classList.remove("light", "dark")
+    document.querySelector('html').classList.add(themeMode)
+  }, [themeMode])
+  
   return (
-    <>
-    <h1 className='text-3xl bg-slate-600 p-10'> Toggling bar....</h1>
-    </>
+    <ThemeProvider value={{themeMode, lightTheme, darkTheme}}>
+      <div className="flex flex-wrap min-h-screen items-center">
+          <div className="w-full">
+              <div className="w-full max-w-sm mx-auto flex justify-end mb-4">
+                  <ThemeBtn />
+              </div>
+
+              <div className="w-full max-w-sm mx-auto">
+                  <Card />
+              </div>
+          </div>
+      </div>
+    </ThemeProvider>
   )
 }
 
